@@ -1,0 +1,6 @@
+{
+  "name": "AI Offline Chatbot",
+  "description": "Fast, intelligent offline assistant that runs completely without internet, featuring local knowledge base, custom training rules, and offline voice synthesis.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

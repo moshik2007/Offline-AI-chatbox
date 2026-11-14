@@ -1,0 +1,98 @@
+import { QuizQuestion } from '../types';
+
+export const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 1,
+    topic: 'Artificial Intelligence',
+    question: 'What is the primary objective of Artificial Intelligence (AI)?',
+    options: [
+      'To build computers that simulate human intelligence & problem solving',
+      'To replace all computer hardware with mechanical relays',
+      'To make web pages load faster using HTML only',
+      'To encrypt hard drives permanently',
+    ],
+    correctIndex: 0,
+    explanation: 'AI aims to create software and systems capable of performing cognitive tasks typically requiring human intelligence, such as visual perception, decision-making, and language comprehension.',
+  },
+  {
+    id: 2,
+    topic: 'Web Development',
+    question: 'What does HTML stand for?',
+    options: [
+      'Hyperlink and Text Markup Language',
+      'HyperText Markup Language',
+      'High-level Telecommunication Media Language',
+      'Home Tool Markup Language',
+    ],
+    correctIndex: 1,
+    explanation: 'HTML stands for HyperText Markup Language, the standard authoring format for creating documents rendered on the World Wide Web.',
+  },
+  {
+    id: 3,
+    topic: 'Python',
+    question: 'Which of the following makes Python especially popular in AI and Machine Learning?',
+    options: [
+      'It cannot be run on Linux',
+      'Vast ecosystem of libraries like NumPy, PyTorch, and scikit-learn with readable syntax',
+      'It requires manual pointer arithmetic',
+      'It only executes inside a web browser',
+    ],
+    correctIndex: 1,
+    explanation: 'Python’s clear syntax and mature data science libraries (NumPy, Pandas, TensorFlow, PyTorch) make it the predominant language for AI development.',
+  },
+  {
+    id: 4,
+    topic: 'Java',
+    question: 'What is the key principle behind Java’s WORA capability?',
+    options: [
+      'Write Once, Run Anywhere via JVM Bytecode execution',
+      'Write Once, Recompile Automatically for every CPU',
+      'Windows Only Runtime Architecture',
+      'Web-Only Resource Access',
+    ],
+    correctIndex: 0,
+    explanation: 'Java source code compiles to bytecode (.class), which can run on any system that has a compatible Java Virtual Machine (JVM).',
+  },
+  {
+    id: 5,
+    topic: 'Offline Technology',
+    question: 'How can client-side web apps function completely offline without internet?',
+    options: [
+      'By using satellite transponders in the monitor',
+      'By utilizing local browser caching, Service Workers, and client-side logic',
+      'Offline apps cannot run in browsers',
+      'By constantly pinging external database servers',
+    ],
+    correctIndex: 1,
+    explanation: 'Modern browsers execute JavaScript directly on the client machine and store data in localStorage/IndexedDB without making outbound network requests.',
+  },
+  {
+    id: 6,
+    topic: 'Data Structures',
+    question: 'What is the average time complexity of searching an element in a Hash Table?',
+    options: ['O(n^2)', 'O(log n)', 'O(1)', 'O(n!)'],
+    correctIndex: 2,
+    explanation: 'Hash Tables use a hashing function to map keys to bucket indices, providing average O(1) constant time lookup.',
+  },
+  {
+    id: 7,
+    topic: 'College Studies',
+    question: 'What is the Pomodoro study technique commonly recommended for exam prep?',
+    options: [
+      'Studying for 12 hours straight without water',
+      '25 minutes of focused study followed by a 5-minute break',
+      'Reading only the index page of textbooks',
+      'Memorizing question numbers',
+    ],
+    correctIndex: 1,
+    explanation: 'The Pomodoro technique uses timed 25-minute intervals of distraction-free focus separated by short rest intervals to maintain peak mental retention.',
+  },
+  {
+    id: 8,
+    topic: 'Object-Oriented Programming',
+    question: 'Which OOP concept refers to wrapping data and code into a single unit to restrict direct access?',
+    options: ['Inheritance', 'Polymorphism', 'Encapsulation', 'Recursion'],
+    correctIndex: 2,
+    explanation: 'Encapsulation bundles data (attributes) and methods that operate on that data inside classes while restricting direct outside access via private/protected modifiers.',
+  },
+];
