@@ -12,7 +12,6 @@ import {
   Moon,
   Camera,
   Mic,
-  Download,
   Code2,
   Calculator,
   FlaskConical,
@@ -32,13 +31,13 @@ import {
 import { AIChatService } from './services/aiChatService';
 import { ChatStorage, DEFAULT_SETTINGS } from './services/chatStorage';
 import { SpeechService } from './services/speechService';
-import { usePWAInstall } from './hooks/usePWAInstall';
 import { Logo3D } from './components/Logo3D';
 import { Sidebar } from './components/Sidebar';
 import { ChatMessages } from './components/ChatMessages';
 import { InputControls } from './components/InputControls';
 import { CameraModal } from './components/CameraModal';
 import { SettingsModal } from './components/SettingsModal';
+import { PWAInstallButton } from './components/PWAInstallButton';
 
 interface StarterPrompt {
   title: string;
@@ -90,8 +89,6 @@ export default function App() {
   const [onlineStatus, setOnlineStatus] = useState<boolean>(
     typeof navigator !== 'undefined' ? navigator.onLine : true
   );
-
-  const { canInstall, isInstalled, installApp } = usePWAInstall();
 
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -564,16 +561,7 @@ export default function App() {
                 </button>
               )}
 
-              {canInstall && !isInstalled && (
-                <button
-                  type="button"
-                  onClick={installApp}
-                  className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-sm transition-all hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>Install App</span>
-                </button>
-              )}
+              <PWAInstallButton variant="header" />
 
               <button
                 type="button"

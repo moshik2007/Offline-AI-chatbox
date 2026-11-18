@@ -9,6 +9,7 @@ import {
   Sparkles,
   ShieldCheck,
   Mic,
+  Smartphone,
 } from 'lucide-react';
 import {
   AppSettings,
@@ -17,6 +18,7 @@ import {
   SpeechLang,
 } from '../types';
 import { SpeechService } from '../services/speechService';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface SettingsModalProps {
   isOpen: boolean;
@@ -343,6 +345,20 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 </div>
               )}
             </div>
+          </section>
+
+          {/* Install as App (PWA) */}
+          <section className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2.5">
+              <Smartphone className="w-4 h-4 text-cyan-500 shrink-0" />
+              <div>
+                <div className="font-semibold">Install LocalMind as an App</div>
+                <div className="text-slate-500 dark:text-slate-400">
+                  Run LocalMind standalone on Android, iOS, Windows, or macOS with offline UI caching
+                </div>
+              </div>
+            </div>
+            <PWAInstallButton variant="settings" />
           </section>
         </div>
 
