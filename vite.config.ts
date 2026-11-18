@@ -21,12 +21,12 @@ export default defineConfig(() => {
         ],
         manifest: {
           id: '/',
-          name: 'AI Offline Chatbot',
-          short_name: 'OfflineChat',
+          name: 'LocalMind — Universal AI Answer Engine',
+          short_name: 'LocalMind',
           description:
-            'Fast, intelligent offline assistant that runs completely without internet, featuring local knowledge base and voice synthesis.',
-          theme_color: '#141e30',
-          background_color: '#141e30',
+            'Universal AI assistant answering any topic in English, Tamil, and Tanglish with streaming responses, camera vision, voice dictation, and local chat history.',
+          theme_color: '#0b1120',
+          background_color: '#0b1120',
           display: 'standalone',
           start_url: '/',
           scope: '/',
@@ -52,6 +52,7 @@ export default defineConfig(() => {
           ],
         },
         workbox: {
+          maximumFileSizeToCacheInBytes: 12 * 1024 * 1024,
           globPatterns: ['**/*.{js,css,html,ico,png,svg,json,woff,woff2}'],
           navigateFallback: '/index.html',
           cleanupOutdatedCaches: true,
@@ -106,6 +107,9 @@ export default defineConfig(() => {
       alias: {
         '@': path.resolve(__dirname, '.'),
       },
+    },
+    worker: {
+      format: 'es' as const,
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.

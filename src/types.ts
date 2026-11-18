@@ -1,60 +1,54 @@
-export type MessageSender = 'user' | 'bot';
+export type MessageSender = 'user' | 'assistant';
 
-export type ResponseCategory =
-  | 'greeting'
-  | 'identity'
-  | 'ai'
-  | 'web'
-  | 'programming'
-  | 'college'
-  | 'tanglish'
-  | 'math'
-  | 'time'
-  | 'help'
-  | 'custom'
-  | 'hybrid-online'
-  | 'general';
+export type ThemeMode = 'dark' | 'light';
 
-export interface Message {
+export type LanguagePreference = 'auto' | 'english' | 'tamil' | 'tanglish';
+
+export type ExplanationDepth = 'standard' | 'simple';
+
+export type SpeechLang = 'en-US' | 'en-IN' | 'ta-IN';
+
+export type AssistantVisualState = 'idle' | 'listening' | 'thinking' | 'speaking';
+
+export interface ImageAttachment {
+  id: string;
+  dataUrl: string;
+  mimeType: string;
+  fileName: string;
+  width: number;
+  height: number;
+  sizeBytes: number;
+  ocrText?: string;
+  ocrConfidence?: number;
+}
+
+export interface ChatMessage {
   id: string;
   sender: MessageSender;
   text: string;
   timestamp: number;
-  category?: ResponseCategory;
-  isOfflineMatch?: boolean;
-  matchScore?: number;
-  codeSnippet?: string;
-  codeLang?: string;
+  topicCategory?: string;
+  topicId?: string;
+  isStreaming?: boolean;
+  isError?: boolean;
+  image?: ImageAttachment;
   liked?: boolean | null;
 }
 
-export interface KnowledgeRule {
+export interface Conversation {
   id: string;
-  triggers: string[];
-  response: string;
-  category: ResponseCategory;
-  isRegex?: boolean;
-  regexPattern?: string;
-  codeSnippet?: string;
-  codeLang?: string;
-  isCustom?: boolean;
-  exampleQuery?: string;
-}
-
-export interface QuizQuestion {
-  id: number;
-  topic: string;
-  question: string;
-  options: string[];
-  correctIndex: number;
-  explanation: string;
+  title: string;
+  createdAt: number;
+  updatedAt: number;
+  messages: ChatMessage[];
 }
 
 export interface AppSettings {
-  isSimulatedOffline: boolean;
-  isHybridAllowed: boolean;
-  ttsEnabled: boolean;
-  ttsVoice: string;
+  language: LanguagePreference;
+  explanationDepth: ExplanationDepth;
+  speechLang: SpeechLang;
+  autoSpeak: boolean;
+  ttsMuted: boolean;
   ttsRate: number;
-  soundEffects: boolean;
+  theme: ThemeMode;
 }
